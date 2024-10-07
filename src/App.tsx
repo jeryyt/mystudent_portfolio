@@ -1,12 +1,12 @@
 import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
 
 function App() {
   return (
     <>
       <section className="h-screen snap-center" id="Homepage">
         <Navbar />
-        <h1 className="text-3xl font-bold underline">Hello world!</h1>
-        <h2 className="text-5xl text-red-400/80">Just a sample.</h2>
+        <Hero />
       </section>
       <section className="h-screen snap-center" id="Services">
         Parallax

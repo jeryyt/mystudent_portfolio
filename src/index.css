@@ -17,3 +17,10 @@ body {
   background-color: #0c0c1d;
   color: lightgray;
 }
+
+@layer components {
+  .hero-container {
+    height: calc(100vh - 100px);
+    background: linear-gradient(180deg, #0c0c1d, #111132);
+  }
+}
