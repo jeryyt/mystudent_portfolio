@@ -1,5 +1,7 @@
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
+import Parallax from "./components/Parallax";
+import Services from "./components/Services";
 
 function App() {
   return (
@@ -9,11 +11,13 @@ function App() {
         <Hero />
       </section>
       <section className="h-screen snap-center" id="Services">
-        Parallax
+        <Parallax type="services" />
       </section>
-      <section className="h-screen snap-center">Services</section>
+      <section className="my-linear-gradient h-screen snap-center">
+        <Services />
+      </section>
       <section className="h-screen snap-center" id="Portfolio">
-        Parallax
+        <Parallax type="portfolio" />
       </section>
       <section className="h-screen snap-center">Portfolio</section>
       <section className="h-screen snap-center">Portfolio</section>

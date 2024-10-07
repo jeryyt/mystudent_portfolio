@@ -4,13 +4,13 @@
 @tailwind components;
 @tailwind utilities;
 
-html {
-  scroll-snap-type: y mandatory;
-  scroll-behavior: smooth;
-}
+/* html { */
+/*   scroll-snap-type: y mandatory; */
+/* } */
 
 * {
   font-family: "DM Sans", sans-serif;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -21,6 +21,10 @@ body {
 @layer components {
   .hero-container {
     height: calc(100vh - 100px);
+    background: linear-gradient(180deg, #0c0c1d, #111132);
+  }
+
+  .my-linear-gradient {
     background: linear-gradient(180deg, #0c0c1d, #111132);
   }
 }

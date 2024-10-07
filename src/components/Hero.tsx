@@ -39,7 +39,7 @@ const sliderVariants: Variants = {
 const Hero = () => {
   return (
     <div className="hero-container relative overflow-hidden">
-      <div className="m-auto h-full max-w-7xl">
+      <div className="relative z-10 m-auto h-full max-w-7xl">
         <motion.div
           className="flex h-full w-1/2 flex-col justify-center gap-10"
           variants={textVariants}
@@ -47,7 +47,7 @@ const Hero = () => {
           animate="animate"
         >
           <motion.h2
-            className="text-3xl tracking-[10px]"
+            className="text-3xl tracking-[10px] text-purple-800"
             variants={textVariants}
           >
             Arfelo Reed
@@ -66,7 +66,8 @@ const Hero = () => {
               See the Latest Works
             </motion.button>
             <motion.button
-              className="rounded-md border border-white bg-transparent p-5 font-light text-white"
+              className="rounded-md border border-white bg-transparent p-5 font-light text-white
+                transition ease-out hover:bg-gray-400 hover:text-black"
               variants={textVariants}
             >
               Contact Me
@@ -90,7 +91,7 @@ const Hero = () => {
         initial="initial"
         animate="animate"
       >
-        Writer Content Creator Influencer
+        React Typescript NodeJS PostgreSQL Express
       </motion.div>
 
       <div className="absolute right-10 top-0 h-full">
