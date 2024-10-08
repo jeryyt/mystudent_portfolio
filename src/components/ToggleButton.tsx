@@ -7,6 +7,7 @@ const ToggleButton = ({
 }) => {
   return (
     <button
+      type="button"
       className="fixed left-6 top-6 z-30 flex h-[50px] w-[50px] items-center justify-center
         rounded-full bg-transparent outline-none"
       onClick={() => setOpen((prev: boolean) => !prev)}

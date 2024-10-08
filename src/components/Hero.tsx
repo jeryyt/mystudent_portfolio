@@ -41,26 +41,30 @@ const Hero = () => {
     <div className="hero-container relative overflow-hidden">
       <div className="relative z-10 m-auto h-full max-w-7xl">
         <motion.div
-          className="flex h-full w-1/2 flex-col justify-center gap-10"
+          className="flex h-full w-1/2 flex-col justify-center gap-10 max-lg:mt-12 max-lg:h-1/2
+            max-lg:w-full max-lg:items-center max-lg:gap-5 max-lg:text-center"
           variants={textVariants}
           initial="initial"
           animate="animate"
         >
           <motion.h2
-            className="text-3xl tracking-[10px] text-purple-800"
+            className="text-3xl tracking-[10px] max-lg:text-2xl"
             variants={textVariants}
           >
-            Arfelo Reed
+            Hi I'm <span className="text-purple-800">Reed</span>
           </motion.h2>
-          <motion.h1 className="text-[88px]" variants={textVariants}>
+          <motion.h1
+            className="text-[88px] font-bold tracking-wider max-lg:text-5xl"
+            variants={textVariants}
+          >
             Full Stack <br />
             Developer
           </motion.h1>
 
-          <motion.div variants={textVariants}>
+          <motion.div variants={textVariants} className="max-lg:mt-5">
             <motion.button
-              className="mr-5 cursor-pointer rounded-md border border-white bg-transparent p-5 font-light
-                text-white"
+              className="mr-5 cursor-pointer rounded-md border border-white bg-yellow-600 p-5 font-light
+                text-white transition ease-out hover:bg-transparent"
               variants={textVariants}
             >
               See the Latest Works
@@ -94,7 +98,10 @@ const Hero = () => {
         React Typescript NodeJS PostgreSQL Express
       </motion.div>
 
-      <div className="absolute right-10 top-0 h-full">
+      <div
+        className="absolute right-0 h-full max-lg:bottom-0 max-lg:h-1/2 max-lg:w-full lg:-right-20
+          lg:top-0"
+      >
         <img
           src="/hero.png"
           alt="Reed's picture"
