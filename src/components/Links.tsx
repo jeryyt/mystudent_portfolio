@@ -36,7 +36,7 @@ const Links = () => {
         <motion.a
           key={item}
           href={`#${item}`}
-          className="cursor-pointer text-4xl"
+          className="cursor-pointer text-4xl max-sm:text-2xl"
           variants={itemVariants}
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
