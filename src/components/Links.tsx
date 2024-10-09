@@ -24,8 +24,25 @@ const itemVariants = {
   },
 };
 
-const Links = () => {
+const Links = ({ setOpen }: { setOpen: (open: boolean) => void }) => {
   const items = ["Homepage", "Services", "Portfolio", "Contact"];
+
+  const handleClick = (
+    sect: string,
+    e: React.MouseEvent<HTMLAnchorElement>,
+  ) => {
+    e.preventDefault();
+    const element = document.getElementById(sect);
+    // adjust the margin top val as needed
+    if (element) {
+      const marginTop = 0;
+      const scrollToY =
+        element.getBoundingClientRect().top + window.scrollY - marginTop;
+
+      window.scrollTo({ top: scrollToY, behavior: "smooth" });
+      setOpen(false); // closed the sidebar
+    }
+  };
 
   return (
     <motion.div
@@ -35,11 +52,12 @@ const Links = () => {
       {items.map((item) => (
         <motion.a
           key={item}
-          href={`#${item}`}
+          href=""
           className="cursor-pointer text-4xl max-sm:text-2xl"
           variants={itemVariants}
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
+          onClick={(e) => handleClick(item, e)}
         >
           {item}
         </motion.a>
