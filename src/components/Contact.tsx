@@ -1,5 +1,8 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
+import { FaSquareXTwitter } from "react-icons/fa6";
+import { FaInstagram, FaLinkedinIn, FaGithub } from "react-icons/fa";
+import Swal from "sweetalert2";
 
 const variants = {
   initial: {
@@ -15,46 +18,112 @@ const variants = {
     },
   },
 };
+const socials = [
+  { icon: <FaSquareXTwitter />, link: "https://twitter.com/ReedTorralba" },
+  { icon: <FaInstagram />, link: "https://www.instagram.com/reedtorz" },
+  { icon: <FaLinkedinIn />, link: "https://www.linkedin.com/in/arfeloreed" },
+  { icon: <FaGithub />, link: "https://github.com/arfeloreed" },
+];
 
 const Contact = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { margin: "-100px", once: true });
+  const formAccessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY;
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const formData = new FormData(event.currentTarget);
+
+    formData.append("access_key", formAccessKey);
+
+    const object = Object.fromEntries(formData);
+    const json = JSON.stringify(object);
+
+    const res = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: json,
+    }).then((res) => res.json());
+
+    if (res.success) {
+      Swal.fire({
+        title: "Success!",
+        text: "Message sent!",
+        icon: "success",
+      });
+      setName("");
+      setEmail("");
+      setMessage("");
+    } else {
+      Swal.fire({
+        title: "Message Failed!",
+        text: "Try again later.",
+        icon: "error",
+        confirmButtonText: "Cool",
+      });
+    }
+  };
 
   return (
     <motion.div
       ref={ref}
-      className="m-auto flex h-full max-w-7xl items-center gap-12"
+      className="m-auto flex h-full max-w-7xl items-center gap-12 max-lg:w-full max-lg:flex-col
+        max-lg:gap-5"
       variants={variants}
       initial="initial"
       // animate="animate"
       whileInView="animate"
     >
-      <motion.div className="flex flex-1 flex-col gap-10" variants={variants}>
+      <motion.div
+        className="flex flex-1 flex-col gap-10 max-lg:mt-16 max-lg:items-center
+          max-lg:justify-center max-lg:gap-5 max-lg:text-center"
+        variants={variants}
+      >
         <motion.h2
-          className="text-8xl font-semibold leading-[80px]"
+          className="text-8xl font-semibold leading-[80px] max-lg:text-5xl"
           variants={variants}
         >
           Let's work together
         </motion.h2>
+
         <motion.div variants={variants}>
-          <p className="text-base font-light">Mail:</p>
-          <p className="text-lg font-light">torralbaarfeloreed@gmail.com</p>
+          <p className="text-lg font-light">
+            Don't be shy to drop by. We can talk about programming, project
+            collaboration, or how good of a cook I am and how tasty the foods I
+            made. I'd love to hear from you.
+          </p>
+        </motion.div>
+
+        <motion.div variants={variants} className="flex items-center gap-3">
+          {socials.map((item) => {
+            return (
+              <a
+                href={item.link}
+                target="_blank"
+                rel="noreferrer"
+                key={item.link}
+                className="text-4xl transition ease-out hover:-translate-y-3 hover:text-yellow-600"
+              >
+                {item.icon}
+              </a>
+            );
+          })}
         </motion.div>
 
         <motion.div variants={variants}>
-          <p className="text-base font-light">Address</p>
-          <p className="text-lg font-light">General Santos City, Philippines</p>
-        </motion.div>
-
-        <motion.div variants={variants}>
-          <p className="text-base font-light">Phone</p>
-          <p className="text-lg font-light">+639 995 981 3002</p>
+          <p className="text-lg font-light">Or call me @ +639 995 981 3002</p>
         </motion.div>
       </motion.div>
 
-      <div className="relative flex-1">
+      <div className="relative flex-1 max-lg:w-full max-lg:px-3">
         <motion.div
-          className="absolute z-[-1] w-full stroke-yellow-600"
+          className="absolute z-[-1] w-full stroke-yellow-600 max-lg:hidden"
           initial={{ opacity: 1 }}
           // animate={{ opacity: 0 }}
           whileInView={{ opacity: 0 }}
@@ -97,26 +166,33 @@ const Contact = () => {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ delay: 4, duration: 1 }}
+          onSubmit={handleSubmit}
         >
           <input
             type="text"
             placeholder="Name"
             name="name"
             required
-            className="rounded-md border border-white bg-transparent p-5 text-lg text-white"
+            className="rounded-md border border-white bg-transparent p-5 text-lg text-white max-lg:p-2"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
           />
           <input
             type="email"
             placeholder="Email"
             name="email"
             required
-            className="rounded-md border border-white bg-transparent p-5 text-lg text-white"
+            className="rounded-md border border-white bg-transparent p-5 text-lg text-white max-lg:p-2"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
           />
           <textarea
             placeholder="Message"
             name="message"
             rows={5}
-            className="rounded-md border border-white bg-transparent p-5 text-lg text-white"
+            className="rounded-md border border-white bg-transparent p-5 text-lg text-white max-lg:p-2"
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
           />
           <input
             type="submit"

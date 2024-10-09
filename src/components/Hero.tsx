@@ -1,4 +1,5 @@
 import { motion, Variants } from "framer-motion";
+import { ReactTyped } from "react-typed";
 
 const textVariants: Variants = {
   initial: {
@@ -57,7 +58,14 @@ const Hero = () => {
             className="text-[88px] font-bold tracking-wider max-lg:text-5xl"
             variants={textVariants}
           >
-            Full Stack <br />
+            <ReactTyped
+              strings={["Full Stack", "Front End", "Back End"]}
+              typeSpeed={90}
+              backDelay={1100}
+              backSpeed={90}
+              loop
+            />{" "}
+            <br />
             Developer
           </motion.h1>
 
