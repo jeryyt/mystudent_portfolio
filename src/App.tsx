@@ -2,6 +2,7 @@ import { ReactLenis } from "lenis/react";
 // components
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
+import Grid from "./components/Grid";
 import Parallax from "./components/Parallax";
 import Services from "./components/Services";
 import Portfolio from "./components/Portfolio";
@@ -17,6 +18,9 @@ function App() {
         <Navbar />
         <Hero />
       </section>
+      <section className="my-linear-gradient flex items-center justify-center px-1 py-32">
+        <Grid />
+      </section>
       <section className="h-screen" id="Services">
         <Parallax type="services" />
       </section>
@@ -27,7 +31,7 @@ function App() {
         <Parallax type="portfolio" />
       </section>
       <Portfolio />
-      <section className="h-screen" id="Contact">
+      <section className="min-h-screen" id="Contact">
         <Contact />
       </section>
       <Footer />

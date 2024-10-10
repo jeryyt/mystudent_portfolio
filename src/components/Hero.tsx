@@ -1,5 +1,6 @@
 import { motion, Variants } from "framer-motion";
 import { ReactTyped } from "react-typed";
+import { FaDownload } from "react-icons/fa";
 
 const textVariants: Variants = {
   initial: {
@@ -38,6 +39,18 @@ const sliderVariants: Variants = {
 };
 
 const Hero = () => {
+  const handleClick = (sect: string) => {
+    const element = document.getElementById(sect);
+    // adjust the margin top val as needed
+    if (element) {
+      const marginTop = 0;
+      const scrollToY =
+        element.getBoundingClientRect().top + window.scrollY - marginTop;
+
+      window.scrollTo({ top: scrollToY, behavior: "smooth" });
+    }
+  };
+
   return (
     <div className="hero-container relative overflow-hidden">
       <div className="relative z-10 m-auto h-full max-w-7xl">
@@ -69,18 +82,25 @@ const Hero = () => {
             Developer
           </motion.h1>
 
-          <motion.div variants={textVariants} className="max-lg:mt-5">
-            <motion.button
-              className="mr-5 cursor-pointer rounded-md border border-white bg-yellow-600 p-5 font-light
-                text-white transition ease-out hover:bg-transparent"
+          <motion.div
+            variants={textVariants}
+            className="flex items-center max-lg:mt-5"
+          >
+            {/* download cv */}
+            <motion.a
+              href="/resume.pdf" // file in public dir
+              download="Reed_Resume.pdf"
+              className="mr-5 flex cursor-pointer items-center gap-2 rounded-md border border-white
+                bg-yellow-600 p-5 font-light text-white transition ease-out hover:bg-transparent"
               variants={textVariants}
             >
-              See the Latest Works
-            </motion.button>
+              <FaDownload /> Download my CV
+            </motion.a>
             <motion.button
               className="rounded-md border border-white bg-transparent p-5 font-light text-white
                 transition ease-out hover:bg-gray-400 hover:text-black"
               variants={textVariants}
+              onClick={() => handleClick("Contact")}
             >
               Contact Me
             </motion.button>

@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import { motion, useInView } from "framer-motion";
 import { FaSquareXTwitter } from "react-icons/fa6";
 import { FaInstagram, FaLinkedinIn, FaGithub } from "react-icons/fa";
@@ -9,14 +9,15 @@ const variants = {
     y: 500,
     opacity: 0,
   },
-  animate: {
+  animate: (delay: number) => ({
     y: 0,
     opacity: 1,
     transition: {
       duration: 0.5,
+      delay,
       staggerChildren: 0.1,
     },
-  },
+  }),
 };
 const socials = [
   { icon: <FaSquareXTwitter />, link: "https://twitter.com/ReedTorralba" },
@@ -32,6 +33,26 @@ const Contact = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [delay, setDelay] = useState(4);
+
+  // detect screen with changes
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(min-width: 1024px)"); // lg breakpoint
+
+    const handleResize = () => {
+      if (mediaQuery.matches)
+        setDelay(4); // delay for larger screens
+      else setDelay(0.5); // delay for smaller screens
+    };
+
+    handleResize();
+
+    mediaQuery.addEventListener("change", handleResize);
+
+    return () => {
+      mediaQuery.removeEventListener("change", handleResize);
+    };
+  }, []);
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -74,7 +95,7 @@ const Contact = () => {
     <motion.div
       ref={ref}
       className="m-auto flex h-full max-w-7xl items-center gap-12 max-lg:w-full max-lg:flex-col
-        max-lg:gap-5"
+        max-lg:gap-5 lg:min-h-screen"
       variants={variants}
       initial="initial"
       // animate="animate"
@@ -131,10 +152,8 @@ const Contact = () => {
           transition={{ delay: 3, duration: 1 }}
         >
           <svg
-            width="450px"
-            height="450px"
             viewBox="0 0 32.666 32.666"
-            className="mx-auto"
+            className="mx-auto h-[450px] w-[450px]"
           >
             <motion.path
               strokeWidth={0.2}
@@ -165,7 +184,7 @@ const Contact = () => {
           // animate={{ opacity: 1 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          transition={{ delay: 4, duration: 1 }}
+          transition={{ delay: delay, duration: 1 }}
           onSubmit={handleSubmit}
         >
           <input
