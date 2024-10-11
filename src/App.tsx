@@ -7,13 +7,13 @@ import Parallax from "./components/Parallax";
 import Services from "./components/Services";
 import Portfolio from "./components/Portfolio";
 import Contact from "./components/Contact";
-import Cursor from "./components/Cursor";
+// import Cursor from "./components/Cursor";
 import Footer from "./components/Footer";
 
 function App() {
   return (
     <ReactLenis root options={{ lerp: 0.06 }}>
-      <Cursor />
+      {/* <Cursor /> */}
       <section className="h-screen px-1" id="Homepage">
         <Navbar />
         <Hero />
