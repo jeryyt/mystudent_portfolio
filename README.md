@@ -1,50 +1,55 @@
-# React + TypeScript + Vite
+# Reed's Developer Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to my personal portfolio website showcasing my skills, projects, and professional background as a Full Stack Developer.
 
-Currently, two official plugins are available:
+## 🛠️ Features
+#### 1. Clean, Responsive Design
+- Built with **TailwindCSS**, ensuring a clean, responsive UI that looks great on any device.
+- Mobile-first design with flexible grid layouts for different screen sizes.
+#### 2. Dynamic Animations
+- **Framer Motion** is used for subtle animations, enhancing user engagement without compromising performance.
+#### 3. Smooth Scrolling & Interactive Navigation
+- Smooth scrolling functionality for easy navigation between sections.
+- Downloadable CV and contact button available directly from the hero section for quick access.
+#### 4. Functioning email sender
+- Send me email directly throught the contact form. Powered by **web3forms** and
+  notification handled by **sweetalert2**.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Tools & Technologies
 
-## Expanding the ESLint configuration
+### Frontend:
+- **React-TS**: The portfolio is powered by **React** with **TypeScript** for a robust, scalable, and type-safe codebase.
+- **Vite**: Ultra-fast development environment with quick build times.
+- **TailwindCSS**: A utility-first CSS framework used to create a custom design effortlessly.
+- **Framer Motion**: For modern, declarative animations and smooth transitions.
+### Deployment
+- Hosted on **Netlify** for a fast and scalable web app experience.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## ⚙️ How to Run Locally
+1. Clone the repository:
+```bash
+git clone https://github.com/arfeloreed/animated-portfolio.git
+```
+2. Install dependencies:
+```bash
+cd animated-portfolio
+npm install
+```
+3. Run the development server:
+```bash
+npm run dev
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## 📄 License
+This project is licensed under the MIT License.
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+<br />
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+### Live site:
+See site live on netlify at [arfeloreed.netlify.app](https://arfeloreed.netlify.app/)
+
+<br />
+
+<div align="center">
+<img src="./_images/portfolio.webp" width="500" height="400">
+</div>
