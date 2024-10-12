@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion, Variants } from "framer-motion";
 import { FaDownload } from "react-icons/fa";
+import { Spotlight } from "./ui/Spotlight";
 
 const sliderVariants: Variants = {
   initial: {
@@ -41,6 +42,18 @@ const Hero = () => {
 
   return (
     <div className="hero-container relative overflow-hidden">
+      <div>
+        <Spotlight
+          className="-left-10 -top-40 h-screen md:-left-32 md:-top-20"
+          fill="white"
+        />
+        <Spotlight
+          className="left-full top-44 h-[80vh] w-[50vw]"
+          fill="purple"
+        />
+        <Spotlight className="left-80 top-28 h-[80vh] w-[50vw]" fill="blue" />
+      </div>
+
       <div className="relative z-10 m-auto h-full max-w-7xl">
         <div
           className="flex h-full w-1/2 flex-col justify-center gap-10 max-lg:mt-12 max-lg:h-1/2
