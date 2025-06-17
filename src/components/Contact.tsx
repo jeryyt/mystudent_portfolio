@@ -21,9 +21,9 @@ const variants = {
 };
 const socials = [
   { icon: <FaSquareXTwitter />, link: "https://twitter.com/ReedTorralba" },
-  { icon: <FaInstagram />, link: "https://www.instagram.com/reedtorz" },
-  { icon: <FaLinkedinIn />, link: "https://www.linkedin.com/in/arfeloreed" },
-  { icon: <FaGithub />, link: "https://github.com/arfeloreed" },
+  { icon: <FaInstagram />, link: "https://www.instagram.com/__jzer.in" },
+  { icon: <FaLinkedinIn />, link: "https://www.linkedin.com/in/jerin-raj67" },
+  { icon: <FaGithub />, link: "https://github.com/jeryyt" },
 ];
 
 const Contact = () => {
@@ -138,7 +138,7 @@ const Contact = () => {
         </motion.div>
 
         <motion.div variants={variants}>
-          <p className="text-lg font-light">Or call me @ +639 995 981 3002</p>
+          <p className="text-lg font-light">Or call me @ +919566670850</p>
         </motion.div>
       </motion.div>
 

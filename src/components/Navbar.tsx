@@ -21,7 +21,7 @@ const Navbar = () => {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
         >
-          Arfelo Reed
+          Jerin Raj
         </motion.span>
       </div>
     </div>

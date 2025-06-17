@@ -35,8 +35,8 @@ const Services = () => {
         variants={variants}
       >
         <p className="text-right text-xl font-extralight max-lg:text-center">
-          I focus on helping your brand grow
-          <br /> and move forward
+         Bridging innovation and execution 
+          <br /> through code and hardware
         </p>
         <hr className="w-full max-w-[500px] border-t border-t-gray-500/80" />
       </motion.div>
@@ -53,17 +53,17 @@ const Services = () => {
           />
           <p className="cursor-default text-8xl font-thin max-lg:text-5xl">
             <span className="font-bold transition ease-out hover:text-yellow-600">
-              Unique
+               Technical 
             </span>{" "}
-            Ideas
+             Skills
           </p>
         </div>
 
         <p className="mt-3 cursor-default text-8xl font-thin max-lg:text-center max-lg:text-5xl">
           <span className="font-bold transition ease-out hover:text-yellow-600">
-            For Your
+         
           </span>{" "}
-          Business
+         
         </p>
       </motion.div>
 
@@ -76,13 +76,10 @@ const Services = () => {
             transition ease-out hover:bg-gray-400 hover:text-black max-lg:border-none"
         >
           <h2 className="mb-10 text-3xl font-medium tracking-wider">
-            Full Stack Development
+             Embedded Systems & Hardware
           </h2>
-          <p>
-            From front-end interfaces to robust back-end systems, I deliver
-            scalable web applications that bring ideas to life. My expertise
-            covers modern frameworks like React, Node.js, and TypeScript,
-            ensuring high performance and seamless user experiences.
+          <p>I build and program hardware systems using microcontrollers like MSP432 and Arduino. My work includes sensor integration, real-time signal processing, and using tools like Keil and Code Composer Studio.
+            
           </p>
         </motion.div>
 
@@ -91,12 +88,10 @@ const Services = () => {
             transition ease-out hover:bg-gray-400 hover:text-black max-lg:border-none"
         >
           <h2 className="mb-10 text-3xl font-medium tracking-wider">
-            UI/UX Design
+            Software & Systems Development
           </h2>
-          <p>
-            Crafting intuitive, user-centered designs that enhance usability and
-            engagement. I blend creativity with functionality to create sleek,
-            responsive designs that users love.
+          <p>I develop backend and CLI-based applications using C, Python, and Node.js. I’m also exploring Linux-based tools and system-level programming to deepen my control over both software and hardware environments.
+           
           </p>
         </motion.div>
 
@@ -105,12 +100,10 @@ const Services = () => {
             transition ease-out hover:bg-gray-400 hover:text-black max-lg:border-none"
         >
           <h2 className="mb-10 text-3xl font-medium tracking-wider">
-            API & System Integration
+            Projects & Technical Exploration
           </h2>
-          <p>
-            I build and integrate APIs, ensuring that your application
-            communicates seamlessly with external services and databases. My
-            experience with REST ensures efficient data exchange.
+          <p>I’m actively working on real-world projects, including a JARVIS-like assistant, sign language recognition, and robotics using ROS. These help me bridge theory with practical implementation.
+            
           </p>
         </div>
       </motion.div>

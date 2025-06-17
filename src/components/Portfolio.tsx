@@ -9,32 +9,19 @@ import keeper from "/keeper.webp";
 const items = [
   {
     id: 1,
-    title: "iPhone 15 Pro",
+    title: "Echo Reflect App",
     img: iphone,
-    desc: "A sleek, pixel-perfect clone of the iPhone 15 Pro landing page, built with React, TypeScript, and TailwindCSS. Stunning 3D visuals powered by ThreeJS.",
-    link: "https://reediphone.netlify.app",
+    desc: "Echo Reflect is an innovative voice-based application designed to analyze the emotional undertones of speech.By evaluating vocal parameters such as tone, pitch, pace, and stress, the app provides real-time feedback on emotional states like anxiety, calmness, or confidence..",
+    link: "https://echo-tone-reflector.lovable.app/",
   },
   {
     id: 2,
-    title: "Nike",
+    title: "HotelEase",
     img: nike,
-    desc: "A bold, dynamic landing page for Nike shoes, showcasing responsive design and smooth animations. Created using React and TailwindCSS.",
+    desc: "A desktop-based hotel booking system built using Python and Tkinter. The application allows users to check room availability, make bookings, calculate total costs, and manage guest records with a user-friendly GUI.",
     link: "https://nikereed.netlify.app/",
   },
-  {
-    id: 3,
-    title: "Password Manager",
-    img: passGen,
-    desc: "A secure, full stack password management app, designed for efficient password storage and retrieval. Built with React, Node.js, and PostgreSQL.",
-    link: "https://reedpassgen.netlify.app/",
-  },
-  {
-    id: 4,
-    title: "Keeper",
-    img: keeper,
-    desc: "A full stack clone of Google Keep for note-taking and organization, developed with Node.js, React, and PostgreSQL for real-time syncing and storage.",
-    link: "https://keeper-ol3w.onrender.com/",
-  },
+ 
 ];
 
 const Single = ({
@@ -54,7 +41,7 @@ const Single = ({
         className="mx-auto flex size-full max-w-7xl items-center justify-center gap-12
           overflow-hidden max-lg:flex-col"
       >
-        <div className="h-1/2 w-full max-lg:h-[300px]" ref={ref}>
+        <div className="h-[300px] w-[1500px] max-lg:w-full max-lg:h-[300px]" ref={ref}>
           <img
             src={item.img}
             alt={item.title}
@@ -104,7 +91,7 @@ const Portfolio = () => {
           max-lg:mb-12"
       >
         <p className="text-5xl font-medium tracking-wider text-yellow-600 max-lg:text-4xl">
-          Featured Works
+          Projects and Certifications
         </p>
 
         <motion.div

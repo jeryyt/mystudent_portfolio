@@ -48,8 +48,8 @@ export const BentoGridItem = ({
   titleClassName?: string;
   spareImg?: string;
 }) => {
-  const leftLists = ["ReactJS", "Express", "Typescript"];
-  const rightLists = ["NodeJS", "PostgreSQL", "Python"];
+  const leftLists = ["C", "ROS", "Java"];
+  const rightLists = ["Python", "Embedd C", "Python"];
   const [copied, setCopied] = useState(false);
   // control the state of animation for lotte
   const [animationStopped, setAnimationStopped] = useState(true);
@@ -63,7 +63,7 @@ export const BentoGridItem = ({
   };
 
   const handleCopy = () => {
-    const text = "torralbaarfeloreed@gmail.com";
+    const text = "jerinraj729@gmail.com";
     navigator.clipboard.writeText(text);
     setCopied(true);
     setAnimationStopped(false);

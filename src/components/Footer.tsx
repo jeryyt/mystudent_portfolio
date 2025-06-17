@@ -5,7 +5,7 @@ const Footer = () => {
     <footer>
       <div className="flex h-[60px] items-center justify-center">
         <p className="text-lg font-light tracking-wide">
-          Copyright © {year} Arfelo Reed
+          Copyright © {year} Jerin Raj
         </p>
       </div>
     </footer>
