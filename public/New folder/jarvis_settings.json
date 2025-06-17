@@ -1,0 +1,10 @@
+{
+  "model_path": "C:/Users/JERIN RAJ/Downloads/vosk-model-small-en-us-0.15",
+  "weather_api_key": "",
+  "wake_words": [
+    "hey jarvis",
+    "jarvis"
+  ],
+  "voice_timeout": 15,
+  "auto_start": false
+}
